@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TruongTanSang_QuanLyLuongNhanVien.Models
 {
@@ -13,7 +9,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Models
         public string IDNhanVien { get; set; }
         public double TienThuong { get; set; }
         public double BaoHiemXaHoi { get; set; }
-        public int SoNgayLamViec { get; set; }
+        public int SoNgayLamViec { get; set; } // Thay thế Ngày làm
 
         // Phương thức tính lương thực nhận
         public double TinhLuongThucNhan(NhanVien nhanVien)
@@ -30,6 +26,12 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Models
         {
             // Ví dụ: Mỗi ngày làm việc được 50k tiền thưởng
             return SoNgayLamViec * 50000;
+        }
+
+        // Phương thức toString để hiển thị thông tin
+        public override string ToString()
+        {
+            return $"Mã Bảng Lương: {IDBangLuong} - Mã NV: {IDNhanVien} - Số Ngày Làm: {SoNgayLamViec}";
         }
     }
 }

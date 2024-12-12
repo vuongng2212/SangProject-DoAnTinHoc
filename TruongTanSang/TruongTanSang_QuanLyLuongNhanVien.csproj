@@ -49,6 +49,10 @@
     <Compile Include="Models\Enums\TrangThaiNhanVien.cs" />
     <Compile Include="Models\NhanVien.cs" />
     <Compile Include="Models\BangLuong.cs" />
+    <Compile Include="Repositories\Implementations\NhanVienRepository.cs" />
+    <Compile Include="Repositories\Implementations\BangLuongRepository.cs" />
+    <Compile Include="Repositories\Interfaces\INhanVienRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IBangLuongRepository.cs" />
     <Compile Include="Views\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,7 +88,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <Folder Include="Data\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

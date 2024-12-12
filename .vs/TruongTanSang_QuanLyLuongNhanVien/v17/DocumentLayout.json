@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "D:\\PROJECT\\SangPrj\\DATH\\TruongTanSang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|d:\\project\\sangprj\\dath\\truongtansang\\truongtansang\\models\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|solutionrelative:truongtansang\\models\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|d:\\project\\sangprj\\dath\\truongtansang\\truongtansang\\models\\bangluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|solutionrelative:truongtansang\\models\\bangluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|d:\\project\\sangprj\\dath\\truongtansang\\truongtansang\\models\\enums\\trangthainhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|solutionrelative:truongtansang\\models\\enums\\trangthainhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -22,45 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "TrangThaiNhanVien.cs",
               "DocumentMoniker": "D:\\PROJECT\\SangPrj\\DATH\\TruongTanSang\\TruongTanSang\\Models\\Enums\\TrangThaiNhanVien.cs",
               "RelativeDocumentMoniker": "TruongTanSang\\Models\\Enums\\TrangThaiNhanVien.cs",
               "ToolTip": "D:\\PROJECT\\SangPrj\\DATH\\TruongTanSang\\TruongTanSang\\Models\\Enums\\TrangThaiNhanVien.cs",
               "RelativeToolTip": "TruongTanSang\\Models\\Enums\\TrangThaiNhanVien.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T09:16:51.303Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BangLuong.cs",
-              "DocumentMoniker": "D:\\PROJECT\\SangPrj\\DATH\\TruongTanSang\\TruongTanSang\\Models\\BangLuong.cs",
-              "RelativeDocumentMoniker": "TruongTanSang\\Models\\BangLuong.cs",
-              "ToolTip": "D:\\PROJECT\\SangPrj\\DATH\\TruongTanSang\\TruongTanSang\\Models\\BangLuong.cs",
-              "RelativeToolTip": "TruongTanSang\\Models\\BangLuong.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T09:14:59.549Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "NhanVien.cs",
-              "DocumentMoniker": "D:\\PROJECT\\SangPrj\\DATH\\TruongTanSang\\TruongTanSang\\Models\\NhanVien.cs",
-              "RelativeDocumentMoniker": "TruongTanSang\\Models\\NhanVien.cs",
-              "ToolTip": "D:\\PROJECT\\SangPrj\\DATH\\TruongTanSang\\TruongTanSang\\Models\\NhanVien.cs",
-              "RelativeToolTip": "TruongTanSang\\Models\\NhanVien.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBAAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T09:14:55.062Z",
+              "WhenOpened": "2024-12-12T09:43:39.361Z",
               "EditorCaption": ""
             }
           ]

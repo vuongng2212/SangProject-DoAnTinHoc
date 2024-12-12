@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations;
+using TruongTanSang_QuanLyLuongNhanVien.Services;
 
 namespace TruongTanSang
 {
@@ -16,7 +15,17 @@ namespace TruongTanSang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+
+            // Khởi tạo các repository
+            var nhanVienRepository = new NhanVienRepository();
+            var bangLuongRepository = new BangLuongRepository();
+
+            // Khởi tạo dịch vụ
+            var authService = new AuthService(nhanVienRepository);
+
+            // Khởi động giao diện đăng nhập
+            var loginForm = new LoginForm(authService);
+            Application.Run(loginForm);
         }
     }
 }

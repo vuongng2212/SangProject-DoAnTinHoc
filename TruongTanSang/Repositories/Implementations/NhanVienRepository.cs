@@ -29,7 +29,8 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
                     HeSoLuong = double.Parse(fields[5]),
                     MucLuongCoSo = double.Parse(fields[6]),
                     Password = fields[7],
-                    TrangThai = (TrangThaiNhanVien)Enum.Parse(typeof(TrangThaiNhanVien), fields[8])
+                    TrangThai = (TrangThaiNhanVien)Enum.Parse(typeof(TrangThaiNhanVien), fields[8]),
+                    Role = fields[9],
                 };
                 nhanViens.Add(nhanVien);
             }
@@ -69,9 +70,9 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
             GhiLaiTatCaNhanVien(nhanViens);
         }
 
-        public NhanVien DangNhap(string maNV, string matKhau)
+        public NhanVien DangNhap(string soDienThoai, string matKhau)
         {
-            var nhanVien = TimNhanVienTheoMa(maNV);
+            var nhanVien = LayTatCaNhanVien().Find(nv => nv.SoDienThoai == soDienThoai);
             return (nhanVien != null && nhanVien.KiemTraMatKhau(matKhau)) ? nhanVien : null;
         }
 

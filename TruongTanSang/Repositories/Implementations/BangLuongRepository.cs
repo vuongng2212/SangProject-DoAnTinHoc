@@ -6,7 +6,7 @@ using TruongTanSang_QuanLyLuongNhanVien.Repositories.Interfaces;
 
 namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
 {
-    public class FileBangLuongRepository : IBangLuongRepository
+    public class BangLuongRepository : IBangLuongRepository
     {
         private const string FILE_PATH = @"Data\bangluong.txt";
 

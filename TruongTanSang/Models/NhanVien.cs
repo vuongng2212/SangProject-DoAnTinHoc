@@ -15,6 +15,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Models
         public double MucLuongCoSo { get; set; }
         public string Password { get; set; }
         public TrangThaiNhanVien TrangThai { get; set; }
+        public string Role { get; set; }
 
         // Phương thức kiểm tra mật khẩu
         public bool KiemTraMatKhau(string matKhauNhapVao)

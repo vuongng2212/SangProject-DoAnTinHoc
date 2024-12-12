@@ -8,3 +8,5 @@ D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\obj\Debug\TruongTan
 D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\obj\Debug\TruongTanSang_QuanLyLuongNhanVien.csproj.CoreCompileInputs.cache
 D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\obj\Debug\TruongTanSang_QuanLyLuongNhanVien.exe
 D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\obj\Debug\TruongTanSang_QuanLyLuongNhanVien.pdb
+D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\bin\Debug\Data\nhanvien.txt
+D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\bin\Debug\Data\bangluong.txt

@@ -7,27 +7,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TruongTanSang_QuanLyLuongNhanVien.Services;
 
 namespace TruongTanSang
 {
     public partial class LoginForm : Form
     {
-        public LoginForm()
+        private readonly AuthService authService;
+
+        public LoginForm(AuthService authService)
         {
             InitializeComponent();
+            this.authService = authService;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             String user = txtUser.Text;
             String pwd = txtPwd.Text;
-            if (user == "admin" && pwd == "123456")
+            XuLyDangNhap(user, pwd);
+        }
+
+        public void XuLyDangNhap(string soDienThoai, string matKhau)
+        {
+            var nhanVien = authService.DangNhap(soDienThoai, matKhau);
+            if (nhanVien != null)
             {
-                MessageBox.Show("Đăng nhập thành công");
+                string role = authService.PhanQuyen(nhanVien);
+                if (role == "admin")
+                {
+                    // Chuyển đến giao diện admin
+                    //OpenAdminDashboard();
+                    MessageBox.Show("Admin!");
+
+                }
+                else
+                {
+                    // Chuyển đến giao diện nhân viên
+                    //OpenEmployeeDashboard();
+                    MessageBox.Show("NhanVien!");
+
+                }
             }
             else
             {
-                MessageBox.Show("Đăng nhập thất bại");
+                // Thông báo đăng nhập không thành công
+                MessageBox.Show("Đăng nhập không thành công!");
             }
         }
     }

@@ -53,6 +53,9 @@
     <Compile Include="Repositories\Implementations\BangLuongRepository.cs" />
     <Compile Include="Repositories\Interfaces\INhanVienRepository.cs" />
     <Compile Include="Repositories\Interfaces\IBangLuongRepository.cs" />
+    <Compile Include="Services\AuthService.cs" />
+    <Compile Include="Services\LuongService.cs" />
+    <Compile Include="Services\NhanVienService.cs" />
     <Compile Include="Views\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,12 +90,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Data\nhanvien.txt" />
-    <Content Include="Data\bangluong.txt" />
+    <Content Include="Data\nhanvien.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\bangluong.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

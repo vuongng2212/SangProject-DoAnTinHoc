@@ -25,9 +25,9 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
                     IDNhanVien = fields[1],
                     TienThuong = double.Parse(fields[2]),
                     BaoHiemXaHoi = double.Parse(fields[3]),
-                    SoNgayLamViec = int.Parse(fields[4]), // Cập nhật để đọc số ngày làm việc
-                    Thang = int.Parse(fields[5]), // Đọc tháng
-                    Nam = int.Parse(fields[6]) // Đọc năm
+                    SoNgayLamViec = int.Parse(fields[4]), 
+                    Thang = int.Parse(fields[5]), 
+                    Nam = int.Parse(fields[6])
                 };
                 bangLuongs.Add(bangLuong);
             }

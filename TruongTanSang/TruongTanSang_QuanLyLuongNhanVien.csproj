@@ -107,6 +107,9 @@
     <EmbeddedResource Include="Views\NhanVien\ChiTietLuongForm.resx">
       <DependentUpon>ChiTietLuongForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\NhanVien\DashboardNhanVienForm.resx">
+      <DependentUpon>DashboardNhanVienForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

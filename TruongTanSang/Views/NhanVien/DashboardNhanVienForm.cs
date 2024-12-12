@@ -18,6 +18,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien
         {
             InitializeComponent();
             _tenNhanVien = tenNhanVien;
+            LoadYears();
             LoadDashboard();
         }
 
@@ -27,7 +28,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien
             lblTenNhanVien.Text = $"Chào mừng, {_tenNhanVien}";
 
             // Lấy ID nhân viên từ tên nhân viên
-            string idNhanVien = GetIdNhanVienByName(_tenNhanVien); // Cần có phương thức để lấy ID từ tên
+            string idNhanVien = GetIdNhanVienByName(_tenNhanVien);
 
             // Lấy thông tin nhân viên
             var nhanVienRepository = new NhanVienRepository();
@@ -43,10 +44,22 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien
             dt.Columns.Add("Lương Thực Nhận");
 
             // Thêm dữ liệu lương vào DataTable
-            foreach (var bl in bangLuongs)
+            if (comboBoxYear.SelectedItem != null) // Kiểm tra xem có mục nào được chọn không
             {
-                // Sử dụng thông tin nhân viên để tính lương thực nhận
-                dt.Rows.Add($"Tháng {bl.Thang}", bl.TinhLuongThucNhan(nhanVien));
+                int selectedYear = (int)comboBoxYear.SelectedItem; // Lấy năm đã chọn
+                foreach (var bl in bangLuongs)
+                {
+                    if (bl.Nam == selectedYear) // Kiểm tra năm
+                    {
+                        // Sử dụng thông tin nhân viên để tính lương thực nhận
+                        double luongThucNhan = bl.TinhLuongThucNhan(nhanVien); // Tính lương thực nhận
+                        dt.Rows.Add($"Tháng {bl.Thang}", luongThucNhan);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một năm để xem bảng lương.");
             }
 
             // Gán dữ liệu cho DataGridView
@@ -62,7 +75,8 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien
                 string thang = dataGridViewLuong.Rows[selectedIndex].Cells[0].Value.ToString();
 
                 // Mở form chi tiết lương cho tháng đã chọn
-                ChiTietLuongForm chiTietLuongForm = new ChiTietLuongForm(thang, GetIdNhanVienByName(_tenNhanVien));
+                int nam = (int)comboBoxYear.SelectedItem; // Lấy năm từ comboBox
+                ChiTietLuongForm chiTietLuongForm = new ChiTietLuongForm(thang, GetIdNhanVienByName(_tenNhanVien), nam);
                 chiTietLuongForm.ShowDialog();
             }
             else
@@ -77,6 +91,28 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien
             var nhanVienRepository = new NhanVienRepository();
             var nhanVien = nhanVienRepository.LayTatCaNhanVien().FirstOrDefault(nv => nv.HoTen == tenNhanVien);
             return nhanVien?.MaNV; // Trả về ID nhân viên
+        }
+
+        private void LoadYears()
+        {
+            // Thêm các năm vào ComboBox
+            for (int year = DateTime.Now.Year - 5; year <= DateTime.Now.Year; year++)
+            {
+                comboBoxYear.Items.Add(year);
+            }
+
+            // Chọn năm hiện tại làm giá trị mặc định
+            comboBoxYear.SelectedItem = DateTime.Now.Year; // Chọn năm hiện tại
+            lblYear.Text = $"Năm: {comboBoxYear.SelectedItem}"; // Hiển thị năm hiện tại
+        }
+
+        private void comboBoxYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxYear.SelectedItem != null) // Kiểm tra xem có mục nào được chọn không
+            {
+                lblYear.Text = $"Năm: {comboBoxYear.SelectedItem}"; // Cập nhật năm hiển thị
+                LoadDashboard(); // Tải lại bảng lương cho năm đã chọn
+            }
         }
     }
 }

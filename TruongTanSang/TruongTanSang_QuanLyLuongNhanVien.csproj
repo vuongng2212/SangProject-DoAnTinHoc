@@ -56,6 +56,24 @@
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\LuongService.cs" />
     <Compile Include="Services\NhanVienService.cs" />
+    <Compile Include="Views\Admin\ThemNhanVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\ThemNhanVienForm.Designer.cs">
+      <DependentUpon>ThemNhanVienForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\SuaNhanVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\SuaNhanVienForm.Designer.cs">
+      <DependentUpon>SuaNhanVienForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\QuanLyNhanVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\QuanLyNhanVienForm.Designer.cs">
+      <DependentUpon>QuanLyNhanVienForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,9 +82,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Views\LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Views\NhanVien\DashboardNhanVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NhanVien\DashboardNhanVienForm.Designer.cs">
+      <DependentUpon>DashboardNhanVienForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NhanVien\ChiTietLuongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NhanVien\ChiTietLuongForm.Designer.cs">
+      <DependentUpon>ChiTietLuongForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -77,6 +104,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\NhanVien\ChiTietLuongForm.resx">
+      <DependentUpon>ChiTietLuongForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -2,7 +2,6 @@ D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\bin\Debug\TruongTan
 D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\bin\Debug\TruongTanSang_QuanLyLuongNhanVien.exe
 D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\bin\Debug\TruongTanSang_QuanLyLuongNhanVien.pdb
 D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\obj\Debug\TruongTanSang_QuanLyLuongNhanVien.csproj.AssemblyReference.cache
-D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\obj\Debug\TruongTanSang.LoginForm.resources
 D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\obj\Debug\TruongTanSang_QuanLyLuongNhanVien.Properties.Resources.resources
 D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\obj\Debug\TruongTanSang_QuanLyLuongNhanVien.csproj.GenerateResource.cache
 D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\obj\Debug\TruongTanSang_QuanLyLuongNhanVien.csproj.CoreCompileInputs.cache
@@ -10,3 +9,4 @@ D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\obj\Debug\TruongTan
 D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\obj\Debug\TruongTanSang_QuanLyLuongNhanVien.pdb
 D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\bin\Debug\Data\nhanvien.txt
 D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\bin\Debug\Data\bangluong.txt
+D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\obj\Debug\TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien.ChiTietLuongForm.resources

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TruongTanSang_QuanLyLuongNhanVien.Services;
+using TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien;
 
 namespace TruongTanSang
 {
@@ -44,9 +45,9 @@ namespace TruongTanSang
                 else
                 {
                     // Chuyển đến giao diện nhân viên
-                    //OpenEmployeeDashboard();
-                    MessageBox.Show("NhanVien!");
-
+                    DashboardNhanVienForm dashboardForm = new DashboardNhanVienForm(nhanVien.HoTen);
+                    dashboardForm.Show(); // Hiển thị form Dashboard
+                    this.Hide();
                 }
             }
             else

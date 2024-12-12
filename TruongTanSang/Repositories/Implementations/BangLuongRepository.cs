@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using TruongTanSang_QuanLyLuongNhanVien.Models;
 using TruongTanSang_QuanLyLuongNhanVien.Repositories.Interfaces;
 
@@ -75,6 +76,12 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
                     writer.WriteLine($"{bl.IDBangLuong}|{bl.IDNhanVien}|{bl.TienThuong}|{bl.BaoHiemXaHoi}|{bl.SoNgayLamViec}|{bl.Thang}|{bl.Nam}"); // Cập nhật để ghi tháng và năm
                 }
             }
+        }
+
+        public List<BangLuong> LayBangLuongTheoNhanVien(string idNhanVien)
+        {
+            var bangLuongs = LayTatCaBangLuong();
+            return bangLuongs.Where(bl => bl.IDNhanVien == idNhanVien).ToList();
         }
     }
 }

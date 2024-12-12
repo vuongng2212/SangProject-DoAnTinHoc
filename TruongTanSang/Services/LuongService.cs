@@ -19,7 +19,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Services
         public double TinhLuongThucNhan(NhanVien nhanVien)
         {
             // Logic để tính lương thực nhận
-            return nhanVien.HeSoLuong * nhanVien.MucLuongCoSo; // Ví dụ đơn giản
+            return nhanVien.HeSoLuong * nhanVien.MucLuongCoSo; 
         }
 
         public List<BangLuong> LayBangLuongTheoNhanVien(string idNhanVien)

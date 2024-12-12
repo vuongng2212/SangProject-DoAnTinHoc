@@ -17,6 +17,29 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Models
         public TrangThaiNhanVien TrangThai { get; set; }
         public string Role { get; set; }
 
+        public NhanVien()
+        {
+        }
+
+        public NhanVien(string maNV, string diaChi, string soDienThoai, string hoTen, string email, double heSoLuong, double mucLuongCoSo, string password, TrangThaiNhanVien trangThai, string role)
+        {
+            MaNV = maNV;
+            DiaChi = diaChi;
+            SoDienThoai = soDienThoai;
+            HoTen = hoTen;
+            Email = email;
+            HeSoLuong = heSoLuong;
+            MucLuongCoSo = mucLuongCoSo;
+            Password = password;
+            TrangThai = trangThai;
+            Role = role;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
         // Phương thức kiểm tra mật khẩu
         public bool KiemTraMatKhau(string matKhauNhapVao)
         {

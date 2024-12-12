@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 using TruongTanSang_QuanLyLuongNhanVien.Models;
 using TruongTanSang_QuanLyLuongNhanVien.Models.Enums;
 using TruongTanSang_QuanLyLuongNhanVien.Repositories.Interfaces;
@@ -9,7 +11,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
 {
     public class NhanVienRepository : INhanVienRepository
     {
-        private const string FILE_PATH = @"Data\nhanvien.txt";
+        private const string FILE_PATH = @"..\..\Data\nhanvien.txt";
 
         public List<NhanVien> LayTatCaNhanVien()
         {
@@ -46,28 +48,52 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
 
         public void ThemNhanVien(NhanVien nhanVien)
         {
-            using (var writer = new StreamWriter(FILE_PATH, true))
+            try
             {
-                writer.WriteLine($"{nhanVien.MaNV}|{nhanVien.HoTen}|{nhanVien.DiaChi}|{nhanVien.SoDienThoai}|{nhanVien.Email}|{nhanVien.HeSoLuong}|{nhanVien.MucLuongCoSo}|{nhanVien.Password}|{(int)nhanVien.TrangThai}");
+                string data = $"{nhanVien.MaNV}|{nhanVien.HoTen}|{nhanVien.DiaChi}|{nhanVien.SoDienThoai}|{nhanVien.Email}|{nhanVien.HeSoLuong}|{nhanVien.MucLuongCoSo}|{nhanVien.Password}|{(int)nhanVien.TrangThai}|{nhanVien.Role}\n";
+                File.AppendAllText(FILE_PATH, data);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi thêm nhân viên: {ex.Message}");
             }
         }
 
         public void CapNhatNhanVien(NhanVien nhanVien)
         {
+
             var nhanViens = LayTatCaNhanVien();
+            var nvTmp = nhanViens.Find(nv => nv.MaNV == nhanVien.MaNV);
+
+            Console.WriteLine(nvTmp.DiaChi);
+
             var index = nhanViens.FindIndex(nv => nv.MaNV == nhanVien.MaNV);
             if (index >= 0)
             {
-                nhanViens[index] = nhanVien;
+                nhanViens[index] = nvTmp;
+                nhanViens[index].HoTen = nhanVien.HoTen;
+                nhanViens[index].DiaChi = nhanVien.DiaChi;
+                nhanViens[index].SoDienThoai = nhanVien.SoDienThoai;
+                nhanViens[index].Email = nhanVien.Email;
+                nhanViens[index].Password = nhanVien.Password;
                 GhiLaiTatCaNhanVien(nhanViens);
+            }
+            else
+            {
+                MessageBox.Show($"Lỗi khi sửa nhân viên!");
             }
         }
 
         public void XoaNhanVien(string maNV)
         {
             var nhanViens = LayTatCaNhanVien();
-            nhanViens.RemoveAll(nv => nv.MaNV == maNV);
-            GhiLaiTatCaNhanVien(nhanViens);
+            var nhanVien = nhanViens.FirstOrDefault(nv => nv.MaNV == maNV);
+
+            if (nhanVien != null)
+            {
+                nhanVien.TrangThai = TrangThaiNhanVien.NghiViec;
+                GhiLaiTatCaNhanVien(nhanViens);
+            }
         }
 
         public NhanVien DangNhap(string soDienThoai, string matKhau)
@@ -78,12 +104,23 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
 
         private void GhiLaiTatCaNhanVien(List<NhanVien> nhanViens)
         {
-            using (var writer = new StreamWriter(FILE_PATH))
+            try
             {
+                // Tạo một danh sách để chứa các dòng dữ liệu
+                var lines = new List<string>();
+
+                // Duyệt qua từng nhân viên và tạo chuỗi dữ liệu
                 foreach (var nv in nhanViens)
                 {
-                    writer.WriteLine($"{nv.MaNV}|{nv.HoTen}|{nv.DiaChi}|{nv.SoDienThoai}|{nv.Email}|{nv.HeSoLuong}|{nv.MucLuongCoSo}|{nv.Password}|{(int)nv.TrangThai}");
+                    lines.Add($"{nv.MaNV}|{nv.HoTen}|{nv.DiaChi}|{nv.SoDienThoai}|{nv.Email}|{nv.HeSoLuong}|{nv.MucLuongCoSo}|{nv.Password}|{(int)nv.TrangThai}|{nv.Role}");
                 }
+
+                // Ghi toàn bộ dữ liệu vào file
+                File.WriteAllText(FILE_PATH, string.Join("\n", lines)); // Ghi tất cả dữ liệu vào file
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi ghi lại tất cả nhân viên: {ex.Message}"); // Hiển thị thông báo lỗi
             }
         }
     }

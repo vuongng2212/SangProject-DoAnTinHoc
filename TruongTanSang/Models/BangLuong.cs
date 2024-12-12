@@ -13,6 +13,23 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Models
         public int Thang { get; set; }
         public int Nam { get; set; }
 
+        public BangLuong()
+        {
+        }
+
+        public BangLuong(string iDBangLuong, string iDNhanVien, double tienThuong, double baoHiemXaHoi, int soNgayLamViec, int thang, int nam)
+        {
+            IDBangLuong = iDBangLuong;
+            IDNhanVien = iDNhanVien;
+            TienThuong = tienThuong;
+            BaoHiemXaHoi = baoHiemXaHoi;
+            SoNgayLamViec = soNgayLamViec;
+            Thang = thang;
+            Nam = nam;
+        }
+
+
+
         // Phương thức tính lương thực nhận
         public double TinhLuongThucNhan(NhanVien nhanVien)
         {

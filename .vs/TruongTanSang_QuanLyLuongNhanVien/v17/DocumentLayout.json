@@ -3,36 +3,32 @@
   "WorkspaceRootPath": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|d:\\project\\sangprj\\dath\\sangproject-doantinhoc\\truongtansang\\repositories\\implementations\\bangluongrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|solutionrelative:truongtansang\\repositories\\implementations\\bangluongrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|d:\\project\\sangprj\\dath\\sangproject-doantinhoc\\truongtansang\\repositories\\implementations\\nhanvienrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|solutionrelative:truongtansang\\repositories\\implementations\\nhanvienrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|d:\\project\\sangprj\\dath\\sangproject-doantinhoc\\truongtansang\\services\\nhanvienservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|solutionrelative:truongtansang\\services\\nhanvienservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|d:\\project\\sangprj\\dath\\sangproject-doantinhoc\\truongtansang\\services\\luongservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|solutionrelative:truongtansang\\services\\luongservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|d:\\project\\sangprj\\dath\\sangproject-doantinhoc\\truongtansang\\views\\admin\\quanlynhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|solutionrelative:truongtansang\\views\\admin\\quanlynhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|d:\\project\\sangprj\\dath\\sangproject-doantinhoc\\truongtansang\\views\\admin\\quanlynhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|solutionrelative:truongtansang\\views\\admin\\quanlynhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|d:\\project\\sangprj\\dath\\sangproject-doantinhoc\\truongtansang\\data\\nhanvien.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|solutionrelative:truongtansang\\data\\nhanvien.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|d:\\project\\sangprj\\dath\\sangproject-doantinhoc\\truongtansang\\views\\admin\\quanlynhanvienform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|solutionrelative:truongtansang\\views\\admin\\quanlynhanvienform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|d:\\project\\sangprj\\dath\\sangproject-doantinhoc\\truongtansang\\views\\admin\\quanlynhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|solutionrelative:truongtansang\\views\\admin\\quanlynhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|d:\\project\\sangprj\\dath\\sangproject-doantinhoc\\truongtansang\\models\\enums\\trangthainhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|solutionrelative:truongtansang\\models\\enums\\trangthainhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|d:\\project\\sangprj\\dath\\sangproject-doantinhoc\\truongtansang\\views\\admin\\suanhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|solutionrelative:truongtansang\\views\\admin\\suanhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|d:\\project\\sangprj\\dath\\sangproject-doantinhoc\\truongtansang\\views\\admin\\suanhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E6EA8427-17E6-490D-B6F7-0320A042F594}|TruongTanSang\\TruongTanSang_QuanLyLuongNhanVien.csproj|solutionrelative:truongtansang\\views\\admin\\suanhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,84 +38,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BangLuongRepository.cs",
-              "DocumentMoniker": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Repositories\\Implementations\\BangLuongRepository.cs",
-              "RelativeDocumentMoniker": "TruongTanSang\\Repositories\\Implementations\\BangLuongRepository.cs",
-              "ToolTip": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Repositories\\Implementations\\BangLuongRepository.cs",
-              "RelativeToolTip": "TruongTanSang\\Repositories\\Implementations\\BangLuongRepository.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAwwEcAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:00:29.945Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "NhanVienService.cs",
-              "DocumentMoniker": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Services\\NhanVienService.cs",
-              "RelativeDocumentMoniker": "TruongTanSang\\Services\\NhanVienService.cs",
-              "ToolTip": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Services\\NhanVienService.cs",
-              "RelativeToolTip": "TruongTanSang\\Services\\NhanVienService.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAA9wAsAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T13:58:00.537Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LuongService.cs",
-              "DocumentMoniker": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Services\\LuongService.cs",
-              "RelativeDocumentMoniker": "TruongTanSang\\Services\\LuongService.cs",
-              "ToolTip": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Services\\LuongService.cs",
-              "RelativeToolTip": "TruongTanSang\\Services\\LuongService.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwAYAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T13:53:28.896Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "QuanLyNhanVienForm.cs",
               "DocumentMoniker": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Views\\Admin\\QuanLyNhanVienForm.cs",
               "RelativeDocumentMoniker": "TruongTanSang\\Views\\Admin\\QuanLyNhanVienForm.cs",
               "ToolTip": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Views\\Admin\\QuanLyNhanVienForm.cs",
               "RelativeToolTip": "TruongTanSang\\Views\\Admin\\QuanLyNhanVienForm.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwAwAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAmwGkAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T13:50:13.679Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TrangThaiNhanVien.cs",
-              "DocumentMoniker": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Models\\Enums\\TrangThaiNhanVien.cs",
-              "RelativeDocumentMoniker": "TruongTanSang\\Models\\Enums\\TrangThaiNhanVien.cs",
-              "ToolTip": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Models\\Enums\\TrangThaiNhanVien.cs",
-              "RelativeToolTip": "TruongTanSang\\Models\\Enums\\TrangThaiNhanVien.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T13:43:03.799Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "nhanvien.txt",
-              "DocumentMoniker": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Data\\nhanvien.txt",
-              "RelativeDocumentMoniker": "TruongTanSang\\Data\\nhanvien.txt",
-              "ToolTip": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Data\\nhanvien.txt",
-              "RelativeToolTip": "TruongTanSang\\Data\\nhanvien.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-12-12T13:42:43.889Z",
+              "WhenOpened": "2024-12-12T17:35:05.691Z",
               "EditorCaption": ""
             },
             {
@@ -131,21 +62,72 @@
               "ToolTip": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Views\\Admin\\QuanLyNhanVienForm.cs [Design]",
               "RelativeToolTip": "TruongTanSang\\Views\\Admin\\QuanLyNhanVienForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T13:17:05.47Z",
+              "WhenOpened": "2024-12-12T17:35:04.007Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "QuanLyNhanVienForm.Designer.cs",
-              "DocumentMoniker": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Views\\Admin\\QuanLyNhanVienForm.Designer.cs",
-              "RelativeDocumentMoniker": "TruongTanSang\\Views\\Admin\\QuanLyNhanVienForm.Designer.cs",
-              "ToolTip": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Views\\Admin\\QuanLyNhanVienForm.Designer.cs",
-              "RelativeToolTip": "TruongTanSang\\Views\\Admin\\QuanLyNhanVienForm.Designer.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAowFwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T13:17:09.695Z",
+              "DocumentIndex": 3,
+              "Title": "nhanvien.txt",
+              "DocumentMoniker": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Data\\nhanvien.txt",
+              "RelativeDocumentMoniker": "TruongTanSang\\Data\\nhanvien.txt",
+              "ToolTip": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Data\\nhanvien.txt",
+              "RelativeToolTip": "TruongTanSang\\Data\\nhanvien.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-12-12T17:21:35.461Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NhanVienService.cs",
+              "DocumentMoniker": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Services\\NhanVienService.cs",
+              "RelativeDocumentMoniker": "TruongTanSang\\Services\\NhanVienService.cs",
+              "ToolTip": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Services\\NhanVienService.cs",
+              "RelativeToolTip": "TruongTanSang\\Services\\NhanVienService.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowA0AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T17:14:09.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NhanVienRepository.cs",
+              "DocumentMoniker": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Repositories\\Implementations\\NhanVienRepository.cs",
+              "RelativeDocumentMoniker": "TruongTanSang\\Repositories\\Implementations\\NhanVienRepository.cs",
+              "ToolTip": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Repositories\\Implementations\\NhanVienRepository.cs",
+              "RelativeToolTip": "TruongTanSang\\Repositories\\Implementations\\NhanVienRepository.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAIwFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T16:49:15.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SuaNhanVienForm.cs",
+              "DocumentMoniker": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Views\\Admin\\SuaNhanVienForm.cs",
+              "RelativeDocumentMoniker": "TruongTanSang\\Views\\Admin\\SuaNhanVienForm.cs",
+              "ToolTip": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Views\\Admin\\SuaNhanVienForm.cs",
+              "RelativeToolTip": "TruongTanSang\\Views\\Admin\\SuaNhanVienForm.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwBUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T16:49:06.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SuaNhanVienForm.cs [Design]",
+              "DocumentMoniker": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Views\\Admin\\SuaNhanVienForm.cs",
+              "RelativeDocumentMoniker": "TruongTanSang\\Views\\Admin\\SuaNhanVienForm.cs",
+              "ToolTip": "D:\\PROJECT\\SangPrj\\DATH\\SangProject-DoAnTinHoc\\TruongTanSang\\Views\\Admin\\SuaNhanVienForm.cs [Design]",
+              "RelativeToolTip": "TruongTanSang\\Views\\Admin\\SuaNhanVienForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T16:49:02.338Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

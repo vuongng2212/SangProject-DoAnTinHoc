@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using TruongTanSang_QuanLyLuongNhanVien.Models;
+using TruongTanSang_QuanLyLuongNhanVien.Models.Enums;
 using TruongTanSang_QuanLyLuongNhanVien.Repositories.Interfaces;
 
 namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations

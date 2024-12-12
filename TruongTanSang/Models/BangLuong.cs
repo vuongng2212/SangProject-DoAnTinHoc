@@ -9,14 +9,13 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Models
         public string IDNhanVien { get; set; }
         public double TienThuong { get; set; }
         public double BaoHiemXaHoi { get; set; }
-        public int SoNgayLamViec { get; set; } // Thay thế Ngày làm
+        public int SoNgayLamViec { get; set; }
+        public int Thang { get; set; }
+        public int Nam { get; set; }
 
         // Phương thức tính lương thực nhận
         public double TinhLuongThucNhan(NhanVien nhanVien)
         {
-            // Công thức tính lương: 
-            // Lương cơ bản = Hệ số lương * Mức lương cơ sở
-            // Lương thực nhận = Lương cơ bản + Tiền thưởng - Bảo hiểm
             double luongCoBan = nhanVien.HeSoLuong * nhanVien.MucLuongCoSo;
             return luongCoBan + TienThuong - BaoHiemXaHoi;
         }
@@ -24,14 +23,13 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Models
         // Phương thức tính tiền thưởng dựa trên số ngày làm việc
         public double TinhTienThuong()
         {
-            // Ví dụ: Mỗi ngày làm việc được 50k tiền thưởng
             return SoNgayLamViec * 50000;
         }
 
         // Phương thức toString để hiển thị thông tin
         public override string ToString()
         {
-            return $"Mã Bảng Lương: {IDBangLuong} - Mã NV: {IDNhanVien} - Số Ngày Làm: {SoNgayLamViec}";
+            return $"Mã Bảng Lương: {IDBangLuong} - Mã NV: {IDNhanVien} - Số Ngày Làm: {SoNgayLamViec} - Tháng: {Thang} - Năm: {Nam}";
         }
     }
 }

@@ -1,0 +1,5 @@
+﻿NV001|Nguyen Van A|Ha Noi|0123456789|nguyenvana@example.com|1.5|5000000|password123|1
+NV002|Tran Thi B|Ho Chi Minh|0987654321|tranthib@example.com|2.0|6000000|password456|0
+NV003|Le Van C|Da Nang|0912345678|levanc@example.com|1.8|5500000|password789|1
+NV004|Pham Thi D|Hai Phong|0934567890|phamthid@example.com|1.2|4800000|password321|0
+NV005|Nguyen Van E|Can Tho|0945678901|nguyenvane@example.com|1.6|5200000|password654|1

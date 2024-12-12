@@ -1,0 +1,10 @@
+D:\PROJECT\SangPrj\DATH\TruongTanSang\TruongTanSang\bin\Debug\TruongTanSang.exe.config
+D:\PROJECT\SangPrj\DATH\TruongTanSang\TruongTanSang\bin\Debug\TruongTanSang.exe
+D:\PROJECT\SangPrj\DATH\TruongTanSang\TruongTanSang\bin\Debug\TruongTanSang.pdb
+D:\PROJECT\SangPrj\DATH\TruongTanSang\TruongTanSang\obj\Debug\TruongTanSang.csproj.AssemblyReference.cache
+D:\PROJECT\SangPrj\DATH\TruongTanSang\TruongTanSang\obj\Debug\TruongTanSang.Form1.resources
+D:\PROJECT\SangPrj\DATH\TruongTanSang\TruongTanSang\obj\Debug\TruongTanSang.Properties.Resources.resources
+D:\PROJECT\SangPrj\DATH\TruongTanSang\TruongTanSang\obj\Debug\TruongTanSang.csproj.GenerateResource.cache
+D:\PROJECT\SangPrj\DATH\TruongTanSang\TruongTanSang\obj\Debug\TruongTanSang.csproj.CoreCompileInputs.cache
+D:\PROJECT\SangPrj\DATH\TruongTanSang\TruongTanSang\obj\Debug\TruongTanSang.exe
+D:\PROJECT\SangPrj\DATH\TruongTanSang\TruongTanSang\obj\Debug\TruongTanSang.pdb

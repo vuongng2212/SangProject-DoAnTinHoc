@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations;
+using TruongTanSang_QuanLyLuongNhanVien.Services;
 
 namespace TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien
 {
@@ -9,6 +10,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien
         private string _thang;
         private string _idNhanVien;
         private int _nam;
+        private LuongService _luongService;
 
         public ChiTietLuongForm(string thang, string idNhanVien, int nam)
         {
@@ -16,6 +18,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien
             _thang = thang;
             _idNhanVien = idNhanVien;
             _nam = nam;
+            _luongService = new LuongService();
             LoadChiTietLuong();
         }
 
@@ -39,8 +42,9 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien
                     lblTienThuong.Text = $"Tiền Thưởng: {bl.TienThuong}";
                     lblBaoHiemXaHoi.Text = $"Bảo Hiểm Xã Hội: {bl.BaoHiemXaHoi}";
                     lblSoNgayLamViec.Text = $"Số Ngày Làm Việc: {bl.SoNgayLamViec}";
-                    lblLuongThucNhan.Text = $"Lương Thực Nhận: {bl.TinhLuongThucNhan(nhanVien)}";
-                    break; // Dừng vòng lặp khi đã tìm thấy bảng lương
+                    double luongThucNhan = _luongService.TinhLuongThucNhan(nhanVien);
+                    lblLuongThucNhan.Text = $"Lương Thực Nhận: {luongThucNhan}";
+                    break;
                 }
             }
         }

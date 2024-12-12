@@ -9,7 +9,6 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Models.Enums
     public enum TrangThaiNhanVien
     {
         DangLamViec = 1,
-        NghiViec = 2,
-        TamNghi = 3
+        NghiViec = 2
     }
 }

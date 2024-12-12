@@ -25,11 +25,5 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Models
         {
             return SoNgayLamViec * 50000;
         }
-
-        // Phương thức toString để hiển thị thông tin
-        public override string ToString()
-        {
-            return $"Mã Bảng Lương: {IDBangLuong} - Mã NV: {IDNhanVien} - Số Ngày Làm: {SoNgayLamViec} - Tháng: {Thang} - Năm: {Nam}";
-        }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TruongTanSang_QuanLyLuongNhanVien.Services;
 using TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien;
-
+using TruongTanSang_QuanLyLuongNhanVien.Views.Admin;
 namespace TruongTanSang
 {
     public partial class LoginForm : Form
@@ -38,9 +38,9 @@ namespace TruongTanSang
                 if (role == "admin")
                 {
                     // Chuyển đến giao diện admin
-                    //OpenAdminDashboard();
-                    MessageBox.Show("Admin!");
-
+                    QuanLyNhanVienForm quanLyNhanVienForm = new QuanLyNhanVienForm();
+                    quanLyNhanVienForm.Show();
+                    this.Hide();
                 }
                 else
                 {

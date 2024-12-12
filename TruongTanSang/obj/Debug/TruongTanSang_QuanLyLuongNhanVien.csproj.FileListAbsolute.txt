@@ -11,3 +11,4 @@ D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\bin\Debug\Data\nhan
 D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\bin\Debug\Data\bangluong.txt
 D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\obj\Debug\TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien.ChiTietLuongForm.resources
 D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\obj\Debug\TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien.DashboardNhanVienForm.resources
+D:\PROJECT\SangPrj\DATH\SangProject-DoAnTinHoc\TruongTanSang\obj\Debug\TruongTanSang_QuanLyLuongNhanVien.Views.Admin.QuanLyNhanVienForm.resources

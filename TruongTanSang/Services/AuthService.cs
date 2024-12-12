@@ -25,7 +25,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Services
 
         public string PhanQuyen(NhanVien nhanVien)
         {
-            return nhanVien.Role; // Trả về vai trò của nhân viên
+            return nhanVien.Role;
         }
     }
 }

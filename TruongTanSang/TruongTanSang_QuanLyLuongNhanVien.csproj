@@ -104,6 +104,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Admin\QuanLyNhanVienForm.resx">
+      <DependentUpon>QuanLyNhanVienForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\NhanVien\ChiTietLuongForm.resx">
       <DependentUpon>ChiTietLuongForm.cs</DependentUpon>
     </EmbeddedResource>

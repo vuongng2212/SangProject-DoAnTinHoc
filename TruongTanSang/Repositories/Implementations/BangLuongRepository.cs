@@ -44,18 +44,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
         {
             using (var writer = new StreamWriter(FILE_PATH, true))
             {
-                writer.WriteLine($"{bangLuong.IDBangLuong}|{bangLuong.IDNhanVien}|{bangLuong.TienThuong}|{bangLuong.BaoHiemXaHoi}|{bangLuong.Thang}|{bangLuong.Nam}"); // Cập nhật để ghi tháng và năm
-            }
-        }
-
-        public void CapNhatBangLuong(BangLuong bangLuong)
-        {
-            var bangLuongs = LayTatCaBangLuong();
-            var index = bangLuongs.FindIndex(bl => bl.IDBangLuong == bangLuong.IDBangLuong);
-            if (index >= 0)
-            {
-                bangLuongs[index] = bangLuong;
-                GhiLaiTatCaBangLuong(bangLuongs);
+                writer.WriteLine($"{bangLuong.IDBangLuong}|{bangLuong.IDNhanVien}|{bangLuong.TienThuong}|{bangLuong.BaoHiemXaHoi}|{bangLuong.Thang}|{bangLuong.Nam}");
             }
         }
 
@@ -81,6 +70,46 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
         {
             var bangLuongs = LayTatCaBangLuong();
             return bangLuongs.Where(bl => bl.IDNhanVien == idNhanVien).ToList();
+        }
+
+        public BangLuong LayBangLuongTheoThang(string thang, string idNhanVien, int nam)
+        {
+            try
+            {
+                var bangLuongs = LayTatCaBangLuong();
+                int thangInt = int.Parse(thang);
+                return bangLuongs.FirstOrDefault(bl => 
+                    bl.Thang == thangInt && 
+                    bl.IDNhanVien == idNhanVien && 
+                    bl.Nam == nam);
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi nếu cần
+                return null;
+            }
+        }
+
+        public bool CapNhatBangLuong(BangLuong bangLuong)
+        {
+            try
+            {
+                var bangLuongs = LayTatCaBangLuong();
+                var index = bangLuongs.FindIndex(bl => bl.IDBangLuong == bangLuong.IDBangLuong);
+                
+                if (index >= 0)
+                {
+                    bangLuongs[index] = bangLuong;
+                    GhiLaiTatCaBangLuong(bangLuongs);
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi nếu cần
+                return false;
+            }
         }
     }
 }

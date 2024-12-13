@@ -64,5 +64,23 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Services
             double luongThucNhan = TinhLuongThucNhan(nhanVien, bangLuong);
             return (bangLuong, luongThucNhan);
         }
+
+        public bool CapNhatLuongThang(string thang, string idNhanVien, int nam, int tienThuong)
+        {
+            try
+            {
+                var bangLuong = _bangLuongRepository.LayBangLuongTheoThang(thang, idNhanVien, nam);
+                if (bangLuong != null)
+                {
+                    bangLuong.TienThuong = tienThuong;
+                    return _bangLuongRepository.CapNhatBangLuong(bangLuong);
+                }
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

@@ -8,7 +8,9 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Interfaces
         List<BangLuong> LayTatCaBangLuong();
         BangLuong TimBangLuongTheoID(string idBangLuong);
         void ThemBangLuong(BangLuong bangLuong);
-        void CapNhatBangLuong(BangLuong bangLuong);
         void XoaBangLuong(string idBangLuong);
+        List<BangLuong> LayBangLuongTheoNhanVien(string idNhanVien);
+        BangLuong LayBangLuongTheoThang(string thang, string idNhanVien, int nam);
+        bool CapNhatBangLuong(BangLuong bangLuong);
     }
 }

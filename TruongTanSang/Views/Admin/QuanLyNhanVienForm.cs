@@ -144,7 +144,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
         {
             if (selectedData != null)
             {
-                var xemLuongForm = new XemLuongNhanVienForm(selectedData.HoTen)
+                var xemLuongForm = new XemLuongNhanVien(selectedData.HoTen, isAdmin: true)
                 {
                     Text = $"Thông Tin Lương - {selectedData.HoTen}",
                     StartPosition = FormStartPosition.CenterParent

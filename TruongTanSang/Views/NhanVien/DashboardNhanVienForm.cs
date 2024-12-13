@@ -71,13 +71,12 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien
             if (dataGridViewLuong.SelectedRows.Count > 0)
             {
                 int selectedIndex = dataGridViewLuong.SelectedRows[0].Index;
-                // Lấy giá trị và xử lý chuỗi để chỉ lấy số
                 string thangText = dataGridViewLuong.Rows[selectedIndex].Cells[0].Value.ToString();
                 string thangSo = thangText.Replace("Tháng ", "").Trim();
                 
-                // Mở form chi tiết lương cho tháng đã chọn
                 int nam = (int)comboBoxYear.SelectedItem;
-                ChiTietLuongForm chiTietLuongForm = new ChiTietLuongForm(thangSo, GetIdNhanVienByName(_tenNhanVien), nam);
+                ChiTietLuongForm chiTietLuongForm = new ChiTietLuongForm(thangSo, 
+                    GetIdNhanVienByName(_tenNhanVien), nam, isAdmin: false);
                 chiTietLuongForm.ShowDialog();
             }
             else

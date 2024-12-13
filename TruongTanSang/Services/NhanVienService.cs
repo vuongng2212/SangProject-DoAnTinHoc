@@ -52,7 +52,19 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Services
         {
             _nhanVienRepository.CapNhatNhanVien(nhanVien);
         }
-
+        public NhanVien TimNhanVienTheoMa(string maNhanVien)
+        {
+            try
+            {
+                var nhanViens = LayTatCaNhanVien();
+                return nhanViens.FirstOrDefault(nv => nv.MaNV == maNhanVien);
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi nếu cần
+                return null;
+            }
+        }
         public (bool isValid, string errorMessage) KiemTraDuLieuNhanVien(string hoTen, string diaChi, string sdt, string email, string password)
         {
             // Kiểm tra họ tên

@@ -58,6 +58,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
             // dataGridViewNhanVien
             // 
             this.dataGridViewNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewNhanVien.Location = new System.Drawing.Point(12, 128);
             this.dataGridViewNhanVien.Name = "dataGridViewNhanVien";
             this.dataGridViewNhanVien.Size = new System.Drawing.Size(911, 310);

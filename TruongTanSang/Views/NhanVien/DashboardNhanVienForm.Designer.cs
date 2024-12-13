@@ -56,6 +56,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien
             // dataGridViewLuong
             // 
             this.dataGridViewLuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLuong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewLuong.Location = new System.Drawing.Point(12, 70);
             this.dataGridViewLuong.Name = "dataGridViewLuong";
             this.dataGridViewLuong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

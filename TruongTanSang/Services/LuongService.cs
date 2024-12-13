@@ -65,7 +65,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Services
             return (bangLuong, luongThucNhan);
         }
 
-        public bool CapNhatLuongThang(string thang, string idNhanVien, int nam, int tienThuong)
+        public bool CapNhatLuongThang(string thang, string idNhanVien, int nam, double tienThuong)
         {
             try
             {
@@ -77,8 +77,9 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Services
                 }
                 return false;
             }
-            catch
+            catch (Exception ex)
             {
+                // Log lỗi nếu cần
                 return false;
             }
         }

@@ -4,12 +4,14 @@ using System.IO;
 using System.Linq;
 using TruongTanSang_QuanLyLuongNhanVien.Models;
 using TruongTanSang_QuanLyLuongNhanVien.Repositories.Interfaces;
+using System.Windows;
+using System.Windows.Forms;
 
 namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
 {
     public class BangLuongRepository : IBangLuongRepository
     {
-        private const string FILE_PATH = @"Data\bangluong.txt";
+        private const string FILE_PATH = @"..\..\Data\bangluong.txt";
 
         public List<BangLuong> LayTatCaBangLuong()
         {
@@ -25,7 +27,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
                     IDNhanVien = fields[1],
                     TienThuong = double.Parse(fields[2]),
                     BaoHiemXaHoi = double.Parse(fields[3]),
-                    Thang = int.Parse(fields[4]), 
+                    Thang = int.Parse(fields[4]),
                     Nam = int.Parse(fields[5])
                 };
                 bangLuongs.Add(bangLuong);
@@ -57,12 +59,18 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
 
         private void GhiLaiTatCaBangLuong(List<BangLuong> bangLuongs)
         {
-            using (var writer = new StreamWriter(FILE_PATH))
+            try
             {
+                var lines = new List<string>();
                 foreach (var bl in bangLuongs)
                 {
-                    writer.WriteLine($"{bl.IDBangLuong}|{bl.IDNhanVien}|{bl.TienThuong}|{bl.BaoHiemXaHoi}|{bl.Thang}|{bl.Nam}");
+                    lines.Add($"{bl.IDBangLuong}|{bl.IDNhanVien}|{bl.TienThuong}|{bl.BaoHiemXaHoi}|{bl.Thang}|{bl.Nam}");
                 }
+                File.WriteAllText(FILE_PATH, string.Join("\n", lines));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi ghi lại tất cả bảng lương: {ex.Message}");
             }
         }
 
@@ -107,7 +115,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
             }
             catch (Exception ex)
             {
-                // Log lỗi nếu cần
+                MessageBox.Show($"Lỗi khi cập nhật bảng lương: {ex.Message}");
                 return false;
             }
         }

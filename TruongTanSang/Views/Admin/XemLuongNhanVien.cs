@@ -28,75 +28,48 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
 
         private void LoadYears()
         {
-            // Thêm các năm vào ComboBox
             for (int year = DateTime.Now.Year - 5; year <= DateTime.Now.Year; year++)
             {
                 comboBoxYear.Items.Add(year);
             }
-
-            // Chọn năm hiện tại làm giá trị mặc định
             comboBoxYear.SelectedItem = DateTime.Now.Year;
             lblYear.Text = $"Năm: {comboBoxYear.SelectedItem}";
         }
 
         private void LoadDashboard()
         {
-            // Hiển thị tên nhân viên
             lblTenNhanVien.Text = $"Thông tin lương: {_tenNhanVien}";
-
-            // Lấy ID nhân viên từ tên nhân viên
             string idNhanVien = GetIdNhanVienByName(_tenNhanVien);
-
-            // Lấy thông tin nhân viên
             var nhanVien = _nhanVienRepository.TimNhanVienTheoMa(idNhanVien);
-
-            // Lấy bảng lương của nhân viên
             var bangLuongs = _luongService.LayBangLuongTheoNhanVien(idNhanVien);
 
-            // Tạo bảng thông tin lương
             DataTable dt = new DataTable();
             dt.Columns.Add("Tháng");
             dt.Columns.Add("Lương Thực Nhận", typeof(decimal));
             dt.Columns.Add("Tiền Thưởng", typeof(decimal));
             dt.Columns.Add("Bảo Hiểm XH", typeof(decimal));
 
-            // Thêm dữ liệu lương vào DataTable
             if (comboBoxYear.SelectedItem != null)
             {
                 int selectedYear = (int)comboBoxYear.SelectedItem;
-                foreach (var bl in bangLuongs.Where(b => b.Nam == selectedYear))
+                var bangLuongNam = bangLuongs.Where(bl => bl.Nam == selectedYear);
+                foreach (var bl in bangLuongNam)
                 {
-                    double luongThucNhan = _luongService.TinhLuongThucNhan(nhanVien, bl);
-                    dt.Rows.Add(
-                        $"Tháng {bl.Thang}",
-                        luongThucNhan,
-                        bl.TienThuong,
-                        bl.BaoHiemXaHoi
-                    );
+                    var luongThucNhan = _luongService.TinhLuongThucNhan(nhanVien, bl);
+                    dt.Rows.Add($"Tháng {bl.Thang}", luongThucNhan, bl.TienThuong, bl.BaoHiemXaHoi);
                 }
             }
 
-            // Gán dữ liệu cho DataGridView
             dataGridViewLuong.DataSource = dt;
-
-            // Format các cột tiền tệ
-            foreach (DataGridViewColumn column in dataGridViewLuong.Columns)
-            {
-                if (column.Index > 0) // Bỏ qua cột Tháng
-                {
-                    column.DefaultCellStyle.Format = "N0";
-                    column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                }
-            }
-
-            // Điều chỉnh độ rộng cột
-            dataGridViewLuong.AutoResizeColumns();
+            dataGridViewLuong.Columns["Lương Thực Nhận"].DefaultCellStyle.Format = "N0";
+            dataGridViewLuong.Columns["Tiền Thưởng"].DefaultCellStyle.Format = "N0";
+            dataGridViewLuong.Columns["Bảo Hiểm XH"].DefaultCellStyle.Format = "N0";
         }
 
         private string GetIdNhanVienByName(string tenNhanVien)
         {
-            var nhanViens = _nhanVienRepository.LayTatCaNhanVien();
-            return nhanViens.FirstOrDefault(nv => nv.HoTen == tenNhanVien)?.MaNV;
+            var nhanVien = _nhanVienRepository.TimNhanVienTheoTen(tenNhanVien);
+            return nhanVien.MaNV;
         }
 
         private void btnXemChiTiet_Click(object sender, EventArgs e)
@@ -112,11 +85,10 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
                     thangSo, 
                     GetIdNhanVienByName(_tenNhanVien), 
                     nam,
-                    _isAdmin); // Truyền quyền admin
+                    _isAdmin);
                 
                 if (chiTietLuongForm.ShowDialog() == DialogResult.OK)
                 {
-                    // Nếu có cập nhật từ form chi tiết, tải lại dữ liệu
                     LoadDashboard();
                 }
             }
@@ -133,39 +105,6 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
             {
                 lblYear.Text = $"Năm: {comboBoxYear.SelectedItem}";
                 LoadDashboard();
-            }
-        }
-
-        // Thêm phương thức để xuất báo cáo nếu cần
-        private void btnXuatBaoCao_Click(object sender, EventArgs e)
-        {
-            if (dataGridViewLuong.Rows.Count > 0)
-            {
-                SaveFileDialog saveDialog = new SaveFileDialog
-                {
-                    Filter = "Excel Files (*.xlsx)|*.xlsx",
-                    FileName = $"BaoCaoLuong_{_tenNhanVien}_{comboBoxYear.SelectedItem}"
-                };
-
-                if (saveDialog.ShowDialog() == DialogResult.OK)
-                {
-                    try
-                    {
-                        // Thêm code xuất Excel ở đây
-                        MessageBox.Show("Xuất báo cáo thành công!", 
-                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Lỗi khi xuất báo cáo: {ex.Message}", 
-                            "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Không có dữ liệu để xuất báo cáo!", 
-                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

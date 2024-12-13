@@ -40,12 +40,6 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
             return nhanViens;
         }
 
-        public NhanVien TimNhanVienTheoMa(string maNV)
-        {
-            var nhanViens = LayTatCaNhanVien();
-            return nhanViens.Find(nv => nv.MaNV == maNV);
-        }
-
         public void ThemNhanVien(NhanVien nhanVien)
         {
             try
@@ -139,6 +133,35 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
             catch (Exception ex)
             {
                 MessageBox.Show($"Lỗi khi ghi lại tất cả nhân viên: {ex.Message}"); // Hiển thị thông báo lỗi
+            }
+        }
+
+        public NhanVien TimNhanVienTheoTen(string tenNhanVien)
+        {
+            try
+            {
+                var nhanViens = LayTatCaNhanVien();
+                return nhanViens.FirstOrDefault(nv => 
+                    nv.HoTen.Equals(tenNhanVien, StringComparison.OrdinalIgnoreCase));
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi nếu cần
+                return null;
+            }
+        }
+
+        public NhanVien TimNhanVienTheoMa(string idNhanVien)
+        {
+            try
+            {
+                var nhanViens = LayTatCaNhanVien();
+                return nhanViens.FirstOrDefault(nv => nv.MaNV == idNhanVien);
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi nếu cần
+                return null;
             }
         }
     }

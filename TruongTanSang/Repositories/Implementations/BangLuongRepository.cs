@@ -25,9 +25,8 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
                     IDNhanVien = fields[1],
                     TienThuong = double.Parse(fields[2]),
                     BaoHiemXaHoi = double.Parse(fields[3]),
-                    SoNgayLamViec = int.Parse(fields[4]), 
-                    Thang = int.Parse(fields[5]), 
-                    Nam = int.Parse(fields[6])
+                    Thang = int.Parse(fields[4]), 
+                    Nam = int.Parse(fields[5])
                 };
                 bangLuongs.Add(bangLuong);
             }
@@ -45,7 +44,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
         {
             using (var writer = new StreamWriter(FILE_PATH, true))
             {
-                writer.WriteLine($"{bangLuong.IDBangLuong}|{bangLuong.IDNhanVien}|{bangLuong.TienThuong}|{bangLuong.BaoHiemXaHoi}|{bangLuong.SoNgayLamViec}|{bangLuong.Thang}|{bangLuong.Nam}"); // Cập nhật để ghi tháng và năm
+                writer.WriteLine($"{bangLuong.IDBangLuong}|{bangLuong.IDNhanVien}|{bangLuong.TienThuong}|{bangLuong.BaoHiemXaHoi}|{bangLuong.Thang}|{bangLuong.Nam}"); // Cập nhật để ghi tháng và năm
             }
         }
 
@@ -73,7 +72,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
             {
                 foreach (var bl in bangLuongs)
                 {
-                    writer.WriteLine($"{bl.IDBangLuong}|{bl.IDNhanVien}|{bl.TienThuong}|{bl.BaoHiemXaHoi}|{bl.SoNgayLamViec}|{bl.Thang}|{bl.Nam}"); // Cập nhật để ghi tháng và năm
+                    writer.WriteLine($"{bl.IDBangLuong}|{bl.IDNhanVien}|{bl.TienThuong}|{bl.BaoHiemXaHoi}|{bl.Thang}|{bl.Nam}");
                 }
             }
         }

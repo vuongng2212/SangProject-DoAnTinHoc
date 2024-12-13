@@ -11,5 +11,6 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Interfaces
         void CapNhatNhanVien(NhanVien nhanVien);
         void XoaNhanVien(string maNV);
         NhanVien DangNhap(string maNV, string matKhau);
+        void GhiLaiTatCaNhanVien(List<NhanVien> nhanViens);
     }
 }

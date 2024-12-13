@@ -5,3 +5,4 @@ NV004|Pham Thi D|Hai Phong|0934567890|phamthid@example.com|1.2|4800000|password3
 NV005|Nguyen Van E|Can Tho|0945678901|nguyenvane@example.com|1.6|5200000|password654|2|NV
 NV006|abc|BT|1331|adfaad|0|0||0|
 NV007|bgbg|BT|113|bgbgggb|1|1000000||2|NV
+NV008|Sang|Son la|0799558912|ád32as|1|1000000|123|2|NV

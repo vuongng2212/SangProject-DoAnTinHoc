@@ -102,7 +102,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
             return (nhanVien != null && nhanVien.KiemTraMatKhau(matKhau)) ? nhanVien : null;
         }
 
-        private void GhiLaiTatCaNhanVien(List<NhanVien> nhanViens)
+        public void GhiLaiTatCaNhanVien(List<NhanVien> nhanViens)
         {
             try
             {

@@ -41,7 +41,6 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien
                     lblIDNhanVien.Text = $"ID Nhân Viên: {bl.IDNhanVien}";
                     lblTienThuong.Text = $"Tiền Thưởng: {bl.TienThuong}";
                     lblBaoHiemXaHoi.Text = $"Bảo Hiểm Xã Hội: {bl.BaoHiemXaHoi}";
-                    lblSoNgayLamViec.Text = $"Số Ngày Làm Việc: {bl.SoNgayLamViec}";
                     double luongThucNhan = _luongService.TinhLuongThucNhan(nhanVien);
                     lblLuongThucNhan.Text = $"Lương Thực Nhận: {luongThucNhan}";
                     break;

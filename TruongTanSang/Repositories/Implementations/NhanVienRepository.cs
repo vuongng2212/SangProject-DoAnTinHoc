@@ -50,8 +50,26 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
         {
             try
             {
-                string data = $"{nhanVien.MaNV}|{nhanVien.HoTen}|{nhanVien.DiaChi}|{nhanVien.SoDienThoai}|{nhanVien.Email}|{nhanVien.HeSoLuong}|{nhanVien.MucLuongCoSo}|{nhanVien.Password}|{(int)nhanVien.TrangThai}|{nhanVien.Role}\n";
-                File.AppendAllText(FILE_PATH, data);
+                // Kiểm tra xem file có tồn tại và có dữ liệu không
+                bool fileExists = File.Exists(FILE_PATH);
+                bool hasContent = fileExists && new FileInfo(FILE_PATH).Length > 0;
+
+                // Tạo chuỗi dữ liệu cho nhân viên mới
+                string data = $"{nhanVien.MaNV}|{nhanVien.HoTen}|{nhanVien.DiaChi}|{nhanVien.SoDienThoai}|{nhanVien.Email}|{nhanVien.HeSoLuong}|{nhanVien.MucLuongCoSo}|{nhanVien.Password}|{(int)nhanVien.TrangThai}|{nhanVien.Role}";
+
+                // Nếu file đã có dữ liệu, thêm ký tự xuống dòng trước dữ liệu mới
+                if (hasContent)
+                {
+                    // Kiểm tra xem ký tự cuối cùng của file có phải là newline không
+                    string lastChar = File.ReadAllText(FILE_PATH);
+                    if (!lastChar.EndsWith(Environment.NewLine))
+                    {
+                        data = Environment.NewLine + data;
+                    }
+                }
+
+                // Ghi dữ liệu vào file
+                File.AppendAllText(FILE_PATH, data + Environment.NewLine);
             }
             catch (Exception ex)
             {

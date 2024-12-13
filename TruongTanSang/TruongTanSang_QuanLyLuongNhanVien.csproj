@@ -56,6 +56,12 @@
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\LuongService.cs" />
     <Compile Include="Services\NhanVienService.cs" />
+    <Compile Include="Views\Admin\XemLuongNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\XemLuongNhanVien.Designer.cs">
+      <DependentUpon>XemLuongNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admin\ThemNhanVienForm.cs">
       <SubType>Form</SubType>
     </Compile>

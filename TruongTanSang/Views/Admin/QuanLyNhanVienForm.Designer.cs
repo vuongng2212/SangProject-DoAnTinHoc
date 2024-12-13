@@ -15,6 +15,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
         private TextBox txtSearchEmail;
         private TextBox txtSearchPhone;
         private Button btnSearch;
+        private Button btnXemLuong;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -50,6 +51,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnXemLuong = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,6 +184,17 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnXemLuong
+            // 
+            this.btnXemLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemLuong.Location = new System.Drawing.Point(558, 47);
+            this.btnXemLuong.Name = "btnXemLuong";
+            this.btnXemLuong.Size = new System.Drawing.Size(120, 30);
+            this.btnXemLuong.TabIndex = 13;
+            this.btnXemLuong.Text = "Xem Lương";
+            this.btnXemLuong.UseVisualStyleBackColor = true;
+            this.btnXemLuong.Click += new System.EventHandler(this.btnXemLuong_Click);
+            // 
             // QuanLyNhanVienForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,6 +213,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
             this.Controls.Add(this.txtSearchName);
             this.Controls.Add(this.btnLoadData);
             this.Controls.Add(this.dataGridViewNhanVien);
+            this.Controls.Add(this.btnXemLuong);
             this.Name = "QuanLyNhanVienForm";
             this.Text = "Quản Lý Nhân Viên";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNhanVien)).EndInit();

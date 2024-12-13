@@ -139,5 +139,23 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
                 }
             }
         }
+
+        private void btnXemLuong_Click(object sender, EventArgs e)
+        {
+            if (selectedData != null)
+            {
+                var xemLuongForm = new XemLuongNhanVienForm(selectedData.HoTen)
+                {
+                    Text = $"Thông Tin Lương - {selectedData.HoTen}",
+                    StartPosition = FormStartPosition.CenterParent
+                };
+                xemLuongForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một nhân viên để xem lương.", 
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

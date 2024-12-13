@@ -1,5 +1,5 @@
 NV001|Nguyen Duc Vuong|Ha Noi|0799558911|nguyenducvuong@example.com|1.5|5000000|123|1|admin
-NV002|Tran Thi B|Ho Chi Minh|0987654321|tranthib@example.com|2|6000000|password456|1|NV
+NV002|Tran Thi B|Ho Chi Minh|0987654321|tranthib@example.com|2|6000000|456|1|NV
 NV003|Le Van C|Da Nang|0912345678|levanc@example.com|1.8|5500000|password789|1|NV
-NV004|Pham Thi D|Hai Phong|0934567890|phamthid@example.com|1.2|4800000|password321|2|NV
-NV005|Nguyen Van E|Can Tho|0945678901|nguyenvane@example.com|1.6|5200000|password654|2|NV
+NV004|Pham Thi D|Ba Ria|0934567890|phamthid@example.com|1.2|4800000|password321|2|NV
+NV005|Nguyen Van E|Can Tho|0945678901|nguyenvane@example.com|1.6|5200000|password654|2|NVNV006

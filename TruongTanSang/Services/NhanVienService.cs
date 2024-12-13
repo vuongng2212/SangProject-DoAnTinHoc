@@ -108,5 +108,78 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Services
             _nhanVienRepository.ThemNhanVien(nhanVien);
             return true;
         }
+
+        public bool ThemNhanVienMoi(string hoTen, string diaChi, string soDienThoai, 
+            string email, string password)
+        {
+            // Kiểm tra dữ liệu đầu vào
+            var kiemTra = KiemTraDuLieuNhanVien(hoTen, diaChi, soDienThoai, email, password);
+            if (!kiemTra.isValid)
+            {
+                MessageBox.Show(kiemTra.errorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Tạo mã nhân viên tự động
+            string maNV = GenerateMaNV();
+
+            // Tạo đối tượng NhanVien mới
+            var newNhanVien = new NhanVien
+            {
+                MaNV = maNV,
+                HoTen = hoTen,
+                DiaChi = diaChi,
+                SoDienThoai = soDienThoai,
+                Email = email,
+                Password = password,
+                HeSoLuong = 1.0,
+                MucLuongCoSo = 1000000,
+                TrangThai = Models.Enums.TrangThaiNhanVien.DangLamViec,
+                Role = "NV"
+            };
+
+            // Thêm nhân viên vào repository
+            _nhanVienRepository.ThemNhanVien(newNhanVien);
+            return true;
+        }
+
+        private string GenerateMaNV()
+        {
+            var nhanViens = _nhanVienRepository.LayTatCaNhanVien();
+            string maxMaNV = nhanViens
+                .Where(nv => nv.MaNV.StartsWith("NV"))
+                .Select(nv => nv.MaNV)
+                .DefaultIfEmpty("NV000")
+                .Max();
+            int nextNumber = int.Parse(maxMaNV.Substring(2)) + 1;
+            return $"NV{nextNumber:D3}";
+        }
+
+        public bool CapNhatThongTinNhanVien(string maNV, string hoTen, string diaChi, 
+            string soDienThoai, string email, string password)
+        {
+            // Kiểm tra dữ liệu đầu vào
+            var kiemTra = KiemTraDuLieuNhanVien(hoTen, diaChi, soDienThoai, email, password);
+            if (!kiemTra.isValid)
+            {
+                MessageBox.Show(kiemTra.errorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Tạo đối tượng NhanVien với thông tin cập nhật
+            var updatedNhanVien = new NhanVien
+            {
+                MaNV = maNV,
+                HoTen = hoTen,
+                DiaChi = diaChi,
+                SoDienThoai = soDienThoai,
+                Email = email,
+                Password = password
+            };
+
+            // Cập nhật thông tin nhân viên
+            _nhanVienRepository.CapNhatNhanVien(updatedNhanVien);
+            return true;
+        }
     }
 }

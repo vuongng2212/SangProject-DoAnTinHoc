@@ -68,15 +68,16 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien
 
         private void btnXemChiTiet_Click(object sender, EventArgs e)
         {
-            // Lấy tháng đã chọn
             if (dataGridViewLuong.SelectedRows.Count > 0)
             {
                 int selectedIndex = dataGridViewLuong.SelectedRows[0].Index;
-                string thang = dataGridViewLuong.Rows[selectedIndex].Cells[0].Value.ToString();
-
+                // Lấy giá trị và xử lý chuỗi để chỉ lấy số
+                string thangText = dataGridViewLuong.Rows[selectedIndex].Cells[0].Value.ToString();
+                string thangSo = thangText.Replace("Tháng ", "").Trim();
+                
                 // Mở form chi tiết lương cho tháng đã chọn
-                int nam = (int)comboBoxYear.SelectedItem; // Lấy năm từ comboBox
-                ChiTietLuongForm chiTietLuongForm = new ChiTietLuongForm(thang, GetIdNhanVienByName(_tenNhanVien), nam);
+                int nam = (int)comboBoxYear.SelectedItem;
+                ChiTietLuongForm chiTietLuongForm = new ChiTietLuongForm(thangSo, GetIdNhanVienByName(_tenNhanVien), nam);
                 chiTietLuongForm.ShowDialog();
             }
             else

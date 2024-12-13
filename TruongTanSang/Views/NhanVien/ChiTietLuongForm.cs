@@ -7,12 +7,12 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien
 {
     public partial class ChiTietLuongForm : Form
     {
-        private string _thang;
-        private string _idNhanVien;
-        private int _nam;
-        private LuongService _luongService;
+        private readonly String _thang;
+        private readonly string _idNhanVien;
+        private readonly int _nam;
+        private readonly LuongService _luongService;
 
-        public ChiTietLuongForm(string thang, string idNhanVien, int nam)
+        public ChiTietLuongForm(String thang, string idNhanVien, int nam)
         {
             InitializeComponent();
             _thang = thang;
@@ -27,25 +27,21 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.NhanVien
             // Hiển thị thông tin chi tiết lương cho tháng và năm
             lblThang.Text = $"Chi tiết lương cho {_thang}/{_nam}";
 
-            // Giả sử bạn đã có một repository để lấy bảng lương
-            var bangLuongRepository = new BangLuongRepository();
-            var bangLuongs = bangLuongRepository.LayTatCaBangLuong(); // Lấy tất cả bảng lương
+            var chiTietLuong = _luongService.LayChiTietLuongTheoThang(_thang, _idNhanVien, _nam);
 
-            // Tìm bảng lương cho tháng và năm đã chọn
-            foreach (var bl in bangLuongs)
+            if (chiTietLuong.BangLuong == null)
             {
-                if (bl.Thang.ToString() == _thang.Split(' ')[1] && bl.IDNhanVien == _idNhanVien && bl.Nam == _nam) // Kiểm tra tháng, ID nhân viên và năm
-                {
-                    var nhanVien = new NhanVienRepository().TimNhanVienTheoMa(bl.IDNhanVien);
-                    lblMaBangLuong.Text = $"Mã Bảng Lương: {bl.IDBangLuong}";
-                    lblIDNhanVien.Text = $"ID Nhân Viên: {bl.IDNhanVien}";
-                    lblTienThuong.Text = $"Tiền Thưởng: {bl.TienThuong}";
-                    lblBaoHiemXaHoi.Text = $"Bảo Hiểm Xã Hội: {bl.BaoHiemXaHoi}";
-                    double luongThucNhan = _luongService.TinhLuongThucNhan(nhanVien);
-                    lblLuongThucNhan.Text = $"Lương Thực Nhận: {luongThucNhan}";
-                    break;
-                }
+                MessageBox.Show("Không tìm thấy thông tin lương cho thời gian này!", 
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
+
+            // Hiển thị thông tin chi tiết
+            lblMaBangLuong.Text = $"Mã Bảng Lương: {chiTietLuong.BangLuong.IDBangLuong}";
+            lblIDNhanVien.Text = $"ID Nhân Viên: {chiTietLuong.BangLuong.IDNhanVien}";
+            lblTienThuong.Text = $"Tiền Thưởng: {chiTietLuong.BangLuong.TienThuong:N0} VNĐ";
+            lblBaoHiemXaHoi.Text = $"Bảo Hiểm Xã Hội: {chiTietLuong.BangLuong.BaoHiemXaHoi:N0} VNĐ";
+            lblLuongThucNhan.Text = $"Lương Thực Nhận: {chiTietLuong.LuongThucNhan:N0} VNĐ";
         }
     }
 }

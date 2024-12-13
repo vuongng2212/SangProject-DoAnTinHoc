@@ -7,41 +7,38 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
 {
     public partial class SuaNhanVienForm : Form
     {
-        private TruongTanSang_QuanLyLuongNhanVien.Models.NhanVien _nhanVien;
+        private string _maNV;
+        private NhanVienService _nhanVienService;
 
-        public SuaNhanVienForm(TruongTanSang_QuanLyLuongNhanVien.Models.NhanVien nhanVien)
+        public SuaNhanVienForm(Models.NhanVien nhanVien)
         {
             InitializeComponent();
-            _nhanVien = nhanVien;
+            _nhanVienService = new NhanVienService();
+            _maNV = nhanVien.MaNV;
 
             // Gán giá trị cho các trường
-            txtHoTen.Text = _nhanVien.HoTen;
-            txtDiaChi.Text = _nhanVien.DiaChi;
-            txtSoDienThoai.Text = _nhanVien.SoDienThoai;
-            txtEmail.Text = _nhanVien.Email;
-            txtPassword.Text = _nhanVien.Password;
-            // Không cho phép sửa các trường khác
+            txtHoTen.Text = nhanVien.HoTen;
+            txtDiaChi.Text = nhanVien.DiaChi;
+            txtSoDienThoai.Text = nhanVien.SoDienThoai;
+            txtEmail.Text = nhanVien.Email;
+            txtPassword.Text = nhanVien.Password;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // Logic để lưu thông tin nhân viên
-            var updatedNhanVien = new TruongTanSang_QuanLyLuongNhanVien.Models.NhanVien
+            if (_nhanVienService.CapNhatThongTinNhanVien(
+                _maNV,
+                txtHoTen.Text,
+                txtDiaChi.Text,
+                txtSoDienThoai.Text,
+                txtEmail.Text,
+                txtPassword.Text))
             {
-                MaNV = _nhanVien.MaNV,
-                HoTen = txtHoTen.Text,
-                DiaChi = txtDiaChi.Text,
-                SoDienThoai = txtSoDienThoai.Text,
-                Email = txtEmail.Text,
-                Password = txtPassword.Text // Nếu bạn muốn lưu mật khẩu
-            };
-
-            // Gọi service để cập nhật thông tin nhân viên
-            var nhanVienService = new NhanVienService();
-            nhanVienService.CapNhatNhanVien(updatedNhanVien);
-
-            this.DialogResult = DialogResult.OK; // Để thông báo rằng việc lưu thành công
-            this.Close(); // Đóng form
+                MessageBox.Show("Cập nhật thông tin nhân viên thành công!", 
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
     }
 }

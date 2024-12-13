@@ -23,7 +23,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // Tạo mã nhân viên tự động
-            string maNV = GenerateMaNV(); // Gọi phương thức để tạo mã nhân viên
+            string maNV = GenerateMaNV();
 
             // Tạo đối tượng NhanVien mới
             var newNhanVien = new Models.NhanVien
@@ -40,19 +40,21 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
                 Role = "NV"
             };
 
-            // Gọi repository để thêm nhân viên
+            // Gọi service để thêm nhân viên
             var nhanVienService = new NhanVienService();
-            nhanVienService.ThemNhanVien(newNhanVien); // Gọi phương thức thêm
-
-            this.DialogResult = DialogResult.OK; // Để thông báo rằng việc thêm thành công
-            this.Close(); // Đóng form
+            if (nhanVienService.ThemNhanVien(newNhanVien))
+            {
+                MessageBox.Show("Thêm nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         // Phương thức để tự động phát sinh mã nhân viên
         private string GenerateMaNV()
         {
             var nhanVienRepository = new NhanVienRepository();
-            var nhanViens = nhanVienRepository.LayTatCaNhanVien(); // Lấy tất cả nhân viên
+            var nhanViens = nhanVienRepository.LayTatCaNhanVien();
 
             // Tìm mã nhân viên lớn nhất
             string maxMaNV = nhanViens

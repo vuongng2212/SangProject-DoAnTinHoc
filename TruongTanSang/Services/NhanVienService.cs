@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TruongTanSang_QuanLyLuongNhanVien.Models;
 using TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations;
+using System.Windows.Forms;
 namespace TruongTanSang_QuanLyLuongNhanVien.Services
 {
     internal class NhanVienService
@@ -52,9 +53,60 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Services
             _nhanVienRepository.CapNhatNhanVien(nhanVien);
         }
 
-        public void ThemNhanVien(NhanVien nhanVien)
+        public (bool isValid, string errorMessage) KiemTraDuLieuNhanVien(string hoTen, string diaChi, string sdt, string email, string password)
         {
+            // Kiểm tra họ tên
+            if (string.IsNullOrWhiteSpace(hoTen))
+            {
+                return (false, "Họ tên không được để trống!");
+            }
+
+            // Kiểm tra địa chỉ
+            if (string.IsNullOrWhiteSpace(diaChi))
+            {
+                return (false, "Địa chỉ không được để trống!");
+            }
+
+            // Kiểm tra số điện thoại
+            if (!System.Text.RegularExpressions.Regex.IsMatch(sdt, @"^\d{10}$"))
+            {
+                return (false, "Số điện thoại phải có đúng 10 chữ số!");
+            }
+
+            // Kiểm tra email
+            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(email, emailPattern))
+            {
+                return (false, "Email không đúng định dạng!");
+            }
+
+            // Kiểm tra mật khẩu
+            if (string.IsNullOrWhiteSpace(password) || password.Length <= 6)
+            {
+                return (false, "Mật khẩu phải có ít nhất 7 ký tự!");
+            }
+
+            return (true, string.Empty);
+        }
+
+        public bool ThemNhanVien(NhanVien nhanVien)
+        {
+            var kiemTra = KiemTraDuLieuNhanVien(
+                nhanVien.HoTen,
+                nhanVien.DiaChi,
+                nhanVien.SoDienThoai,
+                nhanVien.Email,
+                nhanVien.Password
+            );
+
+            if (!kiemTra.isValid)
+            {
+                MessageBox.Show(kiemTra.errorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
             _nhanVienRepository.ThemNhanVien(nhanVien);
+            return true;
         }
     }
 }

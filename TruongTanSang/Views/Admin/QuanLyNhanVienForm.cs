@@ -157,5 +157,52 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void btnThemTienThuong_Click(object sender, EventArgs e)
+        {
+            if (selectedData == null)
+            {
+                MessageBox.Show("Vui lòng chọn một nhân viên để thêm tiền thưởng.", 
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            try
+            {
+                string tienThuongStr = Microsoft.VisualBasic.Interaction.InputBox(
+                    $"Nhập tiền thưởng cho nhân viên {selectedData.HoTen}\nTháng {DateTime.Now.Month}/{DateTime.Now.Year}:",
+                    "Thêm tiền thưởng",
+                    "0");
+
+                if (string.IsNullOrEmpty(tienThuongStr))
+                    return;
+
+                if (!double.TryParse(tienThuongStr, out double tienThuong))
+                {
+                    MessageBox.Show("Số tiền không hợp lệ!", 
+                        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                var luongService = new LuongService();
+                bool ketQua = luongService.ThemTienThuongThangHienTai(selectedData.MaNV, tienThuong);
+
+                if (ketQua)
+                {
+                    MessageBox.Show($"Đã cập nhật tiền thưởng {tienThuong:N0} VNĐ cho nhân viên {selectedData.HoTen}!", 
+                        "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Không thể cập nhật tiền thưởng. Vui lòng kiểm tra lại!", 
+                        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}", 
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

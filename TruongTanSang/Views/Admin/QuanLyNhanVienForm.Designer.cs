@@ -52,21 +52,19 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnXemLuong = new System.Windows.Forms.Button();
+            this.btnThemTienThuong = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewNhanVien
             // 
-            this.dataGridViewNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewNhanVien.Location = new System.Drawing.Point(12, 128);
             this.dataGridViewNhanVien.Name = "dataGridViewNhanVien";
             this.dataGridViewNhanVien.Size = new System.Drawing.Size(911, 310);
             this.dataGridViewNhanVien.TabIndex = 0;
-
-            // Đăng ký sự kiện CellClick
             this.dataGridViewNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNhanVien_CellClick);
-
             // 
             // btnLoadData
             // 
@@ -155,7 +153,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(558, 87);
+            this.btnAdd.Location = new System.Drawing.Point(559, 49);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 10;
@@ -166,7 +164,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(685, 87);
+            this.btnEdit.Location = new System.Drawing.Point(701, 50);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 11;
@@ -177,7 +175,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(815, 87);
+            this.btnDelete.Location = new System.Drawing.Point(828, 50);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 12;
@@ -188,7 +186,7 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
             // btnXemLuong
             // 
             this.btnXemLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemLuong.Location = new System.Drawing.Point(558, 47);
+            this.btnXemLuong.Location = new System.Drawing.Point(763, 92);
             this.btnXemLuong.Name = "btnXemLuong";
             this.btnXemLuong.Size = new System.Drawing.Size(120, 30);
             this.btnXemLuong.TabIndex = 13;
@@ -196,11 +194,23 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
             this.btnXemLuong.UseVisualStyleBackColor = true;
             this.btnXemLuong.Click += new System.EventHandler(this.btnXemLuong_Click);
             // 
+            // btnThemTienThuong
+            // 
+            this.btnThemTienThuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemTienThuong.Location = new System.Drawing.Point(559, 91);
+            this.btnThemTienThuong.Name = "btnThemTienThuong";
+            this.btnThemTienThuong.Size = new System.Drawing.Size(154, 30);
+            this.btnThemTienThuong.TabIndex = 14;
+            this.btnThemTienThuong.Text = "Thêm Tiền Thưởng";
+            this.btnThemTienThuong.UseVisualStyleBackColor = true;
+            this.btnThemTienThuong.Click += new System.EventHandler(this.btnThemTienThuong_Click);
+            // 
             // QuanLyNhanVienForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(935, 450);
+            this.Controls.Add(this.btnThemTienThuong);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -231,5 +241,6 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Views.Admin
         private Button btnAdd;
         private Button btnEdit;
         private Button btnDelete;
+        private Button btnThemTienThuong;
     }
 }

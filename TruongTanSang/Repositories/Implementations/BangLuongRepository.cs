@@ -42,11 +42,36 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
             return bangLuongs.Find(bl => bl.IDBangLuong == idBangLuong);
         }
 
-        public void ThemBangLuong(BangLuong bangLuong)
+        public bool ThemBangLuong(BangLuong bangLuong)
         {
-            using (var writer = new StreamWriter(FILE_PATH, true))
+            try
             {
-                writer.WriteLine($"{bangLuong.IDBangLuong}|{bangLuong.IDNhanVien}|{bangLuong.TienThuong}|{bangLuong.BaoHiemXaHoi}|{bangLuong.Thang}|{bangLuong.Nam}");
+                // Kiểm tra xem file có tồn tại và có dữ liệu không
+                bool fileExists = File.Exists(FILE_PATH);
+                bool hasContent = fileExists && new FileInfo(FILE_PATH).Length > 0;
+
+                // Tạo chuỗi dữ liệu cho nhân viên mới
+                string data = $"{bangLuong.IDBangLuong}|{bangLuong.IDNhanVien}|{bangLuong.TienThuong}|{bangLuong.BaoHiemXaHoi}|{bangLuong.Thang}|{bangLuong.Nam}";
+
+                // Nếu file đã có dữ liệu, thêm ký tự xuống dòng trước dữ liệu mới
+                if (hasContent)
+                {
+                    // Kiểm tra xem ký tự cuối cùng của file có phải là newline không
+                    string lastChar = File.ReadAllText(FILE_PATH);
+                    if (!lastChar.EndsWith(Environment.NewLine))
+                    {
+                        data = Environment.NewLine + data;
+                    }
+                }
+
+                // Ghi dữ liệu vào file
+                File.AppendAllText(FILE_PATH, data + Environment.NewLine);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi thêm nhân viên: {ex.Message}");
+                return false;
             }
         }
 
@@ -118,6 +143,19 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Repositories.Implementations
                 MessageBox.Show($"Lỗi khi cập nhật bảng lương: {ex.Message}");
                 return false;
             }
+        }
+
+        public string LayIDBangLuongCuoiCung()
+        {
+            var bangLuongs = LayTatCaBangLuong();
+            if (bangLuongs.Count == 0)
+            {
+                return "BL000"; 
+            }
+
+            var lastID = bangLuongs.OrderByDescending(bl => bl.IDBangLuong).First().IDBangLuong;
+            int numericPart = int.Parse(lastID.Substring(2)); // Lấy phần số sau "BL"
+            return $"BL{numericPart + 1:D3}"; // Tăng giá trị lên 1 và định dạng lại
         }
     }
 }

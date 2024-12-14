@@ -83,5 +83,43 @@ namespace TruongTanSang_QuanLyLuongNhanVien.Services
                 return false;
             }
         }
+
+        public bool ThemTienThuongThangHienTai(string maNhanVien, double tienThuong)
+        {
+            try
+            {
+                string thang = DateTime.Now.Month.ToString();
+                int nam = DateTime.Now.Year;
+
+                // Kiểm tra xem đã có bảng lương cho tháng hiện tại chưa
+                var bangLuong = _bangLuongRepository.LayBangLuongTheoThang(thang, maNhanVien, nam);
+                
+                if (bangLuong == null)
+                {
+                    // Nếu chưa có, tạo mới bảng lương
+                    string newIDBangLuong = _bangLuongRepository.LayIDBangLuongCuoiCung(); // Lấy ID mới
+                    bangLuong = new BangLuong
+                    {
+                        IDBangLuong = newIDBangLuong, // Sử dụng ID mới
+                        IDNhanVien = maNhanVien,
+                        Thang = int.Parse(thang),
+                        Nam = nam,
+                        TienThuong = tienThuong,
+                        BaoHiemXaHoi = 300000 // Có thể set giá trị mặc định hoặc tính toán
+                    };
+                    return _bangLuongRepository.ThemBangLuong(bangLuong);
+                }
+                else
+                {
+                    // Nếu đã có, cập nhật tiền thưởng
+                    bangLuong.TienThuong += tienThuong;
+                    return _bangLuongRepository.CapNhatBangLuong(bangLuong);
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
